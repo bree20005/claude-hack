@@ -1,0 +1,38 @@
+[
+  {
+    "soc": "35-2014",
+    "title": "Cook, Restaurant",
+    "family_code": "35",
+    "family": "Food Preparation & Serving",
+    "job_zone": 2,
+    "training": "A few months of on-the-job training",
+    "ca_median_hourly": 20.11,
+    "licensed": false,
+    "license_note": "",
+    "skills": ["food safety", "speed under pressure", "teamwork", "inventory"]
+  },
+  {
+    "soc": "37-2011",
+    "title": "Janitor / Cleaner",
+    "family_code": "37",
+    "family": "Building & Grounds Cleaning & Maintenance",
+    "job_zone": 1,
+    "training": "Short on-the-job training",
+    "ca_median_hourly": 18.42,
+    "licensed": false,
+    "license_note": "",
+    "skills": ["reliability", "attention to detail", "safe chemical handling"]
+  },
+  {
+    "soc": "31-1131",
+    "title": "Nursing Assistant (CNA)",
+    "family_code": "31",
+    "family": "Healthcare Support",
+    "job_zone": 2,
+    "training": "Postsecondary certificate (state-approved program)",
+    "ca_median_hourly": 22.35,
+    "licensed": true,
+    "license_note": "State certification required; a record may affect eligibility. Check with the CA licensing board before paying for training.",
+    "skills": ["patient care", "empathy", "record keeping", "safety"]
+  }
+]

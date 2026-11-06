@@ -8,3 +8,5 @@ __pycache__/
 venv/
 dist/
 build/
+# Streamlit secrets (API keys, OAuth config) — never commit
+.streamlit/secrets.toml

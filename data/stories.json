@@ -1,0 +1,29 @@
+[
+  {
+    "id": "s1",
+    "name": "Denise R.",
+    "family_code": "35",
+    "story": "I ran the breakfast line for 180 people every morning inside. When I got out, I didn't think that counted as anything. A training program helped me see it was three years of real kitchen experience.",
+    "now": "Line cook, 2 years",
+    "advice": "Your kitchen time inside is experience. Say it plainly and proudly.",
+    "synthetic": true
+  },
+  {
+    "id": "s2",
+    "name": "Toya M.",
+    "family_code": "31",
+    "story": "I was scared no one would hire me in healthcare. A CNA program that works with people with records helped me check my eligibility first, so I didn't waste money.",
+    "now": "CNA at a senior center",
+    "advice": "Check licensing rules before you pay for a program.",
+    "synthetic": true
+  },
+  {
+    "id": "s3",
+    "name": "Carmen L.",
+    "family_code": "37",
+    "story": "Cleaning crews gave me a steady first paycheck and a reference. From there I moved up to a lead role.",
+    "now": "Crew lead, commercial cleaning",
+    "advice": "A first steady job builds the reference that opens the next door.",
+    "synthetic": true
+  }
+]
