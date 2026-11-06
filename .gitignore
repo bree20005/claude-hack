@@ -10,3 +10,7 @@ dist/
 build/
 # Streamlit secrets (API keys, OAuth config) — never commit
 .streamlit/secrets.toml
+
+# Local SQLite database (user data) — never commit
+data/*.db
+data/*.db-*

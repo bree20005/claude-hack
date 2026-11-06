@@ -45,9 +45,28 @@ def _verify_password(password: str, stored: str) -> bool:
 
 
 # --- session helpers -----------------------------------------------------
+def google_available() -> bool:
+    """True when .streamlit/secrets.toml has an [auth] section (Streamlit OIDC, provider "google")."""
+    try:
+        return "auth" in st.secrets
+    except Exception:  # noqa: BLE001 - no secrets file
+        return False
+
+
 def current_user() -> dict | None:
-    """Return the signed-in user record, or None."""
-    return st.session_state.get(_USER_KEY)
+    """Return the signed-in user record, or None. Google sign-ins come from st.user."""
+    user = st.session_state.get(_USER_KEY)
+    if user is None and google_available():
+        try:
+            if st.user.is_logged_in:
+                sub = st.user.get("sub") or st.user.get("email")
+                user = {"email": f"google:{sub}", "name": st.user.get("given_name") or st.user.get("name") or "Friend",
+                        "provider": "google", "picture": st.user.get("picture")}
+                st.session_state[_USER_KEY] = user
+                st.session_state[_NEW_USER_KEY] = True
+        except Exception:  # noqa: BLE001
+            return None
+    return user
 
 
 def is_new_user() -> bool:
@@ -60,11 +79,16 @@ def clear_new_user_flag() -> None:
 
 
 def logout() -> None:
+    was_google = (st.session_state.get(_USER_KEY) or {}).get("provider") == "google"
     st.session_state.pop(_USER_KEY, None)
     st.session_state.pop(_NEW_USER_KEY, None)
     # Clear the My Path conversation so the next person starts fresh.
     for k in [k for k in st.session_state.keys() if str(k).startswith("mp_")]:
         st.session_state.pop(k, None)
+    for k in ("msg_threads", "msg_active", "res_why", "page"):
+        st.session_state.pop(k, None)
+    if was_google:
+        st.logout()
 
 
 def _set_session(user: dict, new: bool) -> None:

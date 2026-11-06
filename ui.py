@@ -363,7 +363,7 @@ def chat_bubble(role: str, who: str, text: str) -> str:
     )
 
 
-def footer(text: str = "Nothing you type is saved. Not legal advice.") -> None:
+def footer(text: str = "Not legal advice · Licensing and fair-chance rules vary by employer and location.") -> None:
     st.html(f'<div class="rb-bleed rb-footer"><p>{esc(text)}</p></div>')
 
 

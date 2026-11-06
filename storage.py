@@ -120,10 +120,55 @@ class InSessionStorage(Storage):
         return self._bucket(email)
 
 
+class SQLiteStorage(Storage):
+    """Durable backend (db.py). Users go in the users table; activity in kv, keyed by email."""
+
+    def get_user(self, email: str) -> dict | None:
+        import db
+        return db.get_user(email.lower().strip())
+
+    def create_user(self, user: dict) -> None:
+        import db
+        user["email"] = user["email"].lower().strip()
+        db.upsert_user(user)
+
+    def _get(self, email: str, field: str, default):
+        import db
+        return db.kv_get(f"{email}:{field}", default)
+
+    def _set(self, email: str, field: str, value) -> None:
+        import db
+        db.kv_set(f"{email}:{field}", value)
+
+    def save_profile(self, email: str, profile: dict) -> None:
+        self._set(email, "profile", profile)
+
+    def get_profile(self, email: str) -> dict | None:
+        return self._get(email, "profile", None)
+
+    def save_matches(self, email: str, matches: list[dict]) -> None:
+        self._set(email, "matches", matches)
+
+    def get_matches(self, email: str) -> list[dict]:
+        return self._get(email, "matches", [])
+
+    def save_letter(self, email: str, job_soc: str, letter: dict) -> None:
+        letters = self.get_letters(email)
+        letters[job_soc] = letter
+        self._set(email, "letters", letters)
+
+    def get_letters(self, email: str) -> dict[str, dict]:
+        return self._get(email, "letters", {})
+
+    def get_history(self, email: str) -> dict[str, Any]:
+        return {"profile": self.get_profile(email), "matches": self.get_matches(email),
+                "letters": self.get_letters(email)}
+
+
 def get_storage() -> Storage:
     """Return the active storage backend.
 
     Swap the implementation here to change backends app-wide. Constructed per call
     (cheap) so the in-session backend initializes this session's state every rerun.
     """
-    return InSessionStorage()
+    return SQLiteStorage()

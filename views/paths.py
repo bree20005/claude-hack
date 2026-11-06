@@ -13,6 +13,10 @@ import nav
 import ui
 
 
+def _tags_for_family(code: str) -> list[str]:
+    return [t["id"] for t in data.industry_tags() if code in t.get("soc_families", [])][:1]
+
+
 def _wage_chart(steps: list[dict]) -> str:
     """Inline SVG of hourly wage for the paid steps (Figma: 248x232 chart)."""
     paid = [(i + 1, s) for i, s in enumerate(steps) if s.get("wage")]
@@ -90,7 +94,7 @@ def _main_path(p: dict, user: dict) -> None:
                         )
                         with st.container(horizontal=True, key=f"indent_cta_{p['id']}"):
                             st.button(s.get("cta", "Find a course near me."), type="primary", key=f"path_cta_{p['id']}",
-                                      on_click=nav.go, args=("train_up",), kwargs={"family": p["family_code"]})
+                                      on_click=nav.go, args=("resources",), kwargs={"tags": _tags_for_family(p["family_code"])})
                 else:
                     st.html(_step_html(n, s, last))
         with chart:

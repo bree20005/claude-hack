@@ -38,9 +38,11 @@ def _hero_illustration() -> str:
     )
 
 
-def _start_guest(page: str = "my_path") -> None:
+def _start_guest(page: str | None = None) -> None:
     auth.login_guest()
-    nav.go(page)
+    if page:  # deep link (e.g. Explore Paths) skips the persona question
+        st.session_state["mp_persona"] = "seeker"
+        nav.go(page)
 
 
 @st.dialog(" ", width="medium")
@@ -49,6 +51,10 @@ def _login_dialog(title: str) -> None:
         f'<p class="rb-serif" style="font-size:40px;margin:-28px 0 8px 0">{ui.esc(title)}</p>'
         '<p class="rb-small rb-muted" style="font-size:17px">No password to remember. Choose a text or email.</p>'
     )
+    if auth.google_available():
+        if st.button("Continue with Google", type="primary", use_container_width=True, key="login_google"):
+            st.login("google")
+        st.html('<div class="rb-divider" style="margin:4px 0"></div>')
     phone = st.text_input("Phone number", placeholder="(415) 555-0123", key="login_phone")
     if st.button("Text me a code", type="primary", use_container_width=True, key="login_text"):
         ok, msg = auth.login_passwordless(phone, "phone", st.session_state.get("login_program", ""))

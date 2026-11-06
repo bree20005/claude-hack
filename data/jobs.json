@@ -4,35 +4,719 @@
     "title": "Cook, Restaurant",
     "family_code": "35",
     "family": "Food Preparation & Serving",
+    "industry_tags": [
+      "food-service"
+    ],
+    "description": "Prepare, season and cook food in restaurants.",
     "job_zone": 2,
-    "training": "A few months of on-the-job training",
+    "training": "Some preparation: a few months",
     "ca_median_hourly": 20.11,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
     "licensed": false,
     "license_note": "",
-    "skills": ["food safety", "speed under pressure", "teamwork", "inventory"]
+    "skills": [
+      "food safety",
+      "speed under pressure",
+      "teamwork",
+      "inventory"
+    ]
   },
   {
-    "soc": "37-2011",
-    "title": "Janitor / Cleaner",
-    "family_code": "37",
-    "family": "Building & Grounds Cleaning & Maintenance",
-    "job_zone": 1,
-    "training": "Short on-the-job training",
-    "ca_median_hourly": 18.42,
+    "soc": "35-2012",
+    "title": "Cook, Institution and Cafeteria",
+    "family_code": "35",
+    "family": "Food Preparation & Serving",
+    "industry_tags": [
+      "food-service"
+    ],
+    "description": "Cook large batches of food for schools, hospitals and company cafeterias.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 21.5,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
     "licensed": false,
     "license_note": "",
-    "skills": ["reliability", "attention to detail", "safe chemical handling"]
+    "skills": [
+      "food safety",
+      "batch cooking",
+      "following recipes",
+      "teamwork"
+    ]
+  },
+  {
+    "soc": "35-2021",
+    "title": "Food Preparation Worker",
+    "family_code": "35",
+    "family": "Food Preparation & Serving",
+    "industry_tags": [
+      "food-service"
+    ],
+    "description": "Wash, chop and prep ingredients and keep the kitchen stocked and clean.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 18.5,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "knife skills",
+      "food safety",
+      "keeping a clean station"
+    ]
+  },
+  {
+    "soc": "35-3023",
+    "title": "Fast Food and Counter Worker",
+    "family_code": "35",
+    "family": "Food Preparation & Serving",
+    "industry_tags": [
+      "food-service"
+    ],
+    "description": "Take orders, prepare simple food and serve customers at a counter.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 18.6,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "customer service",
+      "speed under pressure",
+      "handling cash",
+      "teamwork"
+    ]
+  },
+  {
+    "soc": "35-9021",
+    "title": "Dishwasher",
+    "family_code": "35",
+    "family": "Food Preparation & Serving",
+    "industry_tags": [
+      "food-service"
+    ],
+    "description": "Clean dishes, pots and kitchen equipment so the kitchen keeps running.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 18.0,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "reliability",
+      "stamina",
+      "sanitation",
+      "teamwork"
+    ]
   },
   {
     "soc": "31-1131",
     "title": "Nursing Assistant (CNA)",
     "family_code": "31",
     "family": "Healthcare Support",
+    "industry_tags": [
+      "healthcare-support"
+    ],
+    "description": "Help patients with daily care like bathing, eating and moving, under a nurse's direction.",
     "job_zone": 2,
-    "training": "Postsecondary certificate (state-approved program)",
+    "training": "Some preparation: a few months",
     "ca_median_hourly": 22.35,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
     "licensed": true,
-    "license_note": "State certification required; a record may affect eligibility. Check with the CA licensing board before paying for training.",
-    "skills": ["patient care", "empathy", "record keeping", "safety"]
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training.",
+    "skills": [
+      "patient care",
+      "empathy",
+      "record keeping",
+      "safety"
+    ]
+  },
+  {
+    "soc": "31-9092",
+    "title": "Medical Assistant",
+    "family_code": "31",
+    "family": "Healthcare Support",
+    "industry_tags": [
+      "healthcare-support"
+    ],
+    "description": "Check patients in, take vital signs and help doctors in clinics and offices.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 24.07,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "patient communication",
+      "vital signs",
+      "scheduling",
+      "medical records"
+    ]
+  },
+  {
+    "soc": "31-9097",
+    "title": "Phlebotomist",
+    "family_code": "31",
+    "family": "Healthcare Support",
+    "industry_tags": [
+      "healthcare-support"
+    ],
+    "description": "Draw blood from patients for tests and donations and label samples correctly.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 26.95,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": true,
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training.",
+    "skills": [
+      "steady hands",
+      "attention to detail",
+      "patient comfort",
+      "infection control"
+    ]
+  },
+  {
+    "soc": "31-9093",
+    "title": "Medical Equipment Preparer (sterile processing)",
+    "family_code": "31",
+    "family": "Healthcare Support",
+    "industry_tags": [
+      "healthcare-support"
+    ],
+    "description": "Clean, sterilize and package medical instruments for hospital use.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 25.5,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "attention to detail",
+      "following procedures",
+      "infection control",
+      "organization"
+    ]
+  },
+  {
+    "soc": "31-1122",
+    "title": "Personal Care Aide",
+    "family_code": "31",
+    "family": "Healthcare Support",
+    "industry_tags": [
+      "caregiving-childcare"
+    ],
+    "description": "Help older adults or people with disabilities with daily tasks in their homes.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 17.75,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "patience",
+      "empathy",
+      "reliability",
+      "household tasks"
+    ]
+  },
+  {
+    "soc": "31-1121",
+    "title": "Home Health Aide",
+    "family_code": "31",
+    "family": "Healthcare Support",
+    "industry_tags": [
+      "caregiving-childcare"
+    ],
+    "description": "Provide basic health care and daily help to clients at home.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 18.0,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": true,
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training.",
+    "skills": [
+      "patient care",
+      "empathy",
+      "observation",
+      "reliability"
+    ]
+  },
+  {
+    "soc": "39-9011",
+    "title": "Childcare Worker",
+    "family_code": "39",
+    "family": "Personal Care & Service",
+    "industry_tags": [
+      "caregiving-childcare"
+    ],
+    "description": "Care for and supervise children at daycares, homes or after-school programs.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 18.9,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": true,
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training.",
+    "skills": [
+      "patience",
+      "safety awareness",
+      "communication",
+      "creativity"
+    ]
+  },
+  {
+    "soc": "37-2011",
+    "title": "Janitor / Cleaner",
+    "family_code": "37",
+    "family": "Building & Grounds Cleaning & Maintenance",
+    "industry_tags": [
+      "cleaning-facilities"
+    ],
+    "description": "Keep offices, schools and other buildings clean and in good order.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 18.42,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "reliability",
+      "attention to detail",
+      "safe chemical handling"
+    ]
+  },
+  {
+    "soc": "37-2012",
+    "title": "Maid and Housekeeping Cleaner",
+    "family_code": "37",
+    "family": "Building & Grounds Cleaning & Maintenance",
+    "industry_tags": [
+      "cleaning-facilities"
+    ],
+    "description": "Clean rooms in hotels, hospitals and homes.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 18.6,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "attention to detail",
+      "stamina",
+      "time management"
+    ]
+  },
+  {
+    "soc": "37-3011",
+    "title": "Landscaping and Groundskeeping Worker",
+    "family_code": "37",
+    "family": "Building & Grounds Cleaning & Maintenance",
+    "industry_tags": [
+      "cleaning-facilities"
+    ],
+    "description": "Mow, plant, trim and care for outdoor spaces.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 20.15,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "working outdoors",
+      "using tools safely",
+      "stamina",
+      "teamwork"
+    ]
+  },
+  {
+    "soc": "39-5012",
+    "title": "Hairdresser / Cosmetologist",
+    "family_code": "39",
+    "family": "Personal Care & Service",
+    "industry_tags": [
+      "beauty-personal-care"
+    ],
+    "description": "Cut, color and style hair for clients.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 19.8,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": true,
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training.",
+    "skills": [
+      "creativity",
+      "customer service",
+      "sanitation",
+      "building regulars"
+    ]
+  },
+  {
+    "soc": "39-5092",
+    "title": "Manicurist and Pedicurist",
+    "family_code": "39",
+    "family": "Personal Care & Service",
+    "industry_tags": [
+      "beauty-personal-care"
+    ],
+    "description": "Clean, shape and polish clients' nails.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 17.4,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": true,
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training.",
+    "skills": [
+      "steady hands",
+      "sanitation",
+      "customer service"
+    ]
+  },
+  {
+    "soc": "41-2031",
+    "title": "Retail Salesperson",
+    "family_code": "41",
+    "family": "Sales",
+    "industry_tags": [
+      "retail-customer-service"
+    ],
+    "description": "Help customers find products and complete purchases in stores.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 18.1,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "customer service",
+      "communication",
+      "product knowledge",
+      "handling cash"
+    ]
+  },
+  {
+    "soc": "41-2011",
+    "title": "Cashier",
+    "family_code": "41",
+    "family": "Sales",
+    "industry_tags": [
+      "retail-customer-service"
+    ],
+    "description": "Ring up purchases, handle payments and help customers at checkout.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 17.45,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "handling cash",
+      "accuracy",
+      "customer service"
+    ]
+  },
+  {
+    "soc": "43-4051",
+    "title": "Customer Service Representative",
+    "family_code": "43",
+    "family": "Office & Administrative Support",
+    "industry_tags": [
+      "retail-customer-service",
+      "office-admin"
+    ],
+    "description": "Answer customer questions and solve problems by phone, chat or in person.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 22.9,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "communication",
+      "problem solving",
+      "patience",
+      "computer skills"
+    ]
+  },
+  {
+    "soc": "43-4171",
+    "title": "Receptionist and Information Clerk",
+    "family_code": "43",
+    "family": "Office & Administrative Support",
+    "industry_tags": [
+      "office-admin"
+    ],
+    "description": "Greet visitors, answer phones and give out information at a front desk.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 20.7,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "communication",
+      "phone skills",
+      "organization",
+      "computer skills"
+    ]
+  },
+  {
+    "soc": "43-9061",
+    "title": "Office Clerk, General",
+    "family_code": "43",
+    "family": "Office & Administrative Support",
+    "industry_tags": [
+      "office-admin"
+    ],
+    "description": "Handle filing, data entry, phones and other everyday office tasks.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 21.6,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "organization",
+      "data entry",
+      "computer skills",
+      "attention to detail"
+    ]
+  },
+  {
+    "soc": "43-3031",
+    "title": "Bookkeeping, Accounting, and Auditing Clerk",
+    "family_code": "43",
+    "family": "Office & Administrative Support",
+    "industry_tags": [
+      "office-admin"
+    ],
+    "description": "Keep financial records, enter transactions and check numbers for accuracy.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 26.6,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "math",
+      "accuracy",
+      "spreadsheets",
+      "confidentiality"
+    ]
+  },
+  {
+    "soc": "47-2061",
+    "title": "Construction Laborer",
+    "family_code": "47",
+    "family": "Construction & Extraction",
+    "industry_tags": [
+      "trades-construction"
+    ],
+    "description": "Do physical work on building sites like digging, carrying materials and cleanup.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 26.4,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "stamina",
+      "using tools safely",
+      "teamwork",
+      "following safety rules"
+    ]
+  },
+  {
+    "soc": "47-2141",
+    "title": "Painter, Construction and Maintenance",
+    "family_code": "47",
+    "family": "Construction & Extraction",
+    "industry_tags": [
+      "trades-construction"
+    ],
+    "description": "Prepare surfaces and paint walls, buildings and other structures.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 25.3,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "attention to detail",
+      "surface prep",
+      "ladder safety"
+    ]
+  },
+  {
+    "soc": "49-9071",
+    "title": "Maintenance and Repair Worker, General",
+    "family_code": "49",
+    "family": "Installation, Maintenance & Repair",
+    "industry_tags": [
+      "trades-construction"
+    ],
+    "description": "Fix and maintain building systems, equipment and fixtures.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 26.7,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "troubleshooting",
+      "basic electrical and plumbing",
+      "using tools safely",
+      "reliability"
+    ]
+  },
+  {
+    "soc": "53-7065",
+    "title": "Stocker and Order Filler",
+    "family_code": "53",
+    "family": "Transportation & Material Moving",
+    "industry_tags": [
+      "warehouse-driving"
+    ],
+    "description": "Stock shelves and pick and pack orders in stores and warehouses.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 18.9,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "organization",
+      "stamina",
+      "accuracy",
+      "teamwork"
+    ]
+  },
+  {
+    "soc": "53-7062",
+    "title": "Laborer and Freight, Stock, and Material Mover",
+    "family_code": "53",
+    "family": "Transportation & Material Moving",
+    "industry_tags": [
+      "warehouse-driving"
+    ],
+    "description": "Load, unload and move freight and materials by hand.",
+    "job_zone": 1,
+    "training": "Little or no preparation: days to a few weeks",
+    "ca_median_hourly": 19.2,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "stamina",
+      "safe lifting",
+      "teamwork",
+      "reliability"
+    ]
+  },
+  {
+    "soc": "53-7051",
+    "title": "Forklift / Industrial Truck Operator",
+    "family_code": "53",
+    "family": "Transportation & Material Moving",
+    "industry_tags": [
+      "warehouse-driving"
+    ],
+    "description": "Drive forklifts to move, stack and load materials in warehouses.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 21.8,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "equipment operation",
+      "safety awareness",
+      "spatial awareness"
+    ]
+  },
+  {
+    "soc": "33-2011",
+    "title": "Firefighter",
+    "family_code": "33",
+    "family": "Protective Service",
+    "industry_tags": [
+      "firefighting-emergency"
+    ],
+    "description": "Respond to fires and emergencies to protect people and property.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 42.0,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": true,
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training. California has a pathway for people who served on fire crews; ask a reentry legal aid org.",
+    "skills": [
+      "physical fitness",
+      "teamwork under pressure",
+      "emergency response",
+      "following orders"
+    ]
+  },
+  {
+    "soc": "33-9032",
+    "title": "Security Guard",
+    "family_code": "33",
+    "family": "Protective Service",
+    "industry_tags": [
+      "firefighting-emergency"
+    ],
+    "description": "Patrol and watch over property to keep people and places safe.",
+    "job_zone": 2,
+    "training": "Some preparation: a few months",
+    "ca_median_hourly": 19.3,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": true,
+    "license_note": "This job usually needs a California license or certification, and a record can affect approval. Check with the licensing board before paying for training.",
+    "skills": [
+      "observation",
+      "calm under pressure",
+      "report writing",
+      "communication"
+    ]
+  },
+  {
+    "soc": "21-1094",
+    "title": "Community Health Worker",
+    "family_code": "21",
+    "family": "Community & Social Service",
+    "industry_tags": [
+      "peer-support-community"
+    ],
+    "description": "Connect people in your community with health care and services they need.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 25.4,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "lived experience",
+      "communication",
+      "empathy",
+      "knowing local resources"
+    ]
+  },
+  {
+    "soc": "21-1093",
+    "title": "Social and Human Service Assistant",
+    "family_code": "21",
+    "family": "Community & Social Service",
+    "industry_tags": [
+      "peer-support-community"
+    ],
+    "description": "Help case managers and social workers connect clients with support services.",
+    "job_zone": 3,
+    "training": "Medium preparation: a training program or certificate, often under 2 years",
+    "ca_median_hourly": 22.1,
+    "wage_source": "Approximate CA median (BLS OEWS-based estimate); verify before relying on it",
+    "licensed": false,
+    "license_note": "",
+    "skills": [
+      "empathy",
+      "case notes",
+      "knowing local resources",
+      "communication"
+    ]
   }
 ]
