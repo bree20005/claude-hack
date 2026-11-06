@@ -1,0 +1,16 @@
+[
+  {
+    "employer": "City & County of San Francisco",
+    "ats": "smartrecruiters",
+    "token": "CityAndCountyOfSanFrancisco1",
+    "fair_chance_evidence": "Covered by SF's Fair Chance Ordinance (public employer); many entry-level civil-service classes (custodian, clerk, eligibility worker).",
+    "source_url": "https://www.sf.gov/information/fair-chance-ordinance"
+  },
+  {
+    "employer": "Checkr",
+    "ats": "greenhouse",
+    "token": "checkr",
+    "fair_chance_evidence": "Fair-chance hiring advocate; background-check company that actively promotes second-chance employment.",
+    "source_url": "https://checkr.com/fair-chance"
+  }
+]

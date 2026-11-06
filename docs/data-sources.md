@@ -85,6 +85,22 @@ endpoint; hand-seed fair-chance employers. Treat findhelp/211 as later partner i
 
 ---
 
+## Implemented job sources (in `sources/`)
+
+| File | Source | Auth | Status |
+|---|---|---|---|
+| `sources/wages.py` | data.ca.gov EDD OEWS wages | none | **live** |
+| `sources/jobs.py` | Adzuna job postings | free key (`ADZUNA_APP_ID/KEY` in secrets) | **live when keyed**, else [] |
+| `sources/fair_chance.py` | keyless ATS boards (Greenhouse, Lever, SmartRecruiters) over `data/fair_chance_employers.json` | **none** | **live now** |
+
+- Adzuna has no SOC filter → `sources/jobs.py` maps SOC → search phrases (`SOC_KEYWORDS`).
+  Attribution ("provided by Adzuna") is shown when its results appear.
+- Fair-chance layer reads each curated employer's public ATS feed (no key), filters to the
+  Bay Area, and matches titles to the SOC synonyms. Seed list verified live: **City &
+  County of SF** (SmartRecruiters, ~156 postings) and **Checkr** (Greenhouse). Add more
+  employers to `data/fair_chance_employers.json` with cited `fair_chance_evidence`.
+- Both surface in the My Path job cards under **"Jobs hiring near you."**
+
 ## How this maps onto our architecture
 
 Our `data.py` already abstracts `load_jobs/stories/training` + `join_match`. Add a provider

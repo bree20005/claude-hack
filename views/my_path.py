@@ -12,6 +12,8 @@ import streamlit as st
 
 import data
 import llm
+from sources import fair_chance
+from sources import jobs as jobs_src
 from storage import get_storage
 
 QUESTIONS = [
@@ -111,6 +113,8 @@ def _render_job_card(email: str, store, match: dict, profile: dict) -> None:
                     if t.get("licensing_warning"):
                         st.warning(f"⚠️ {t['licensing_warning']}")
 
+        _render_live_jobs(job)
+
         if st.button("Write my cover letter", key=f"letter_{job['soc']}"):
             answers = st.session_state.get("my_path_answers", {})
             with st.spinner("Writing your letter..."):
@@ -123,3 +127,52 @@ def _render_job_card(email: str, store, match: dict, profile: dict) -> None:
                 "Your cover letter", value=letter, height=320, key=f"letterbox_{job['soc']}"
             )
     st.caption("Not legal advice. Fair chance rules vary by employer and location.")
+
+
+def _salary(j: dict) -> str:
+    lo, hi = j.get("salary_min"), j.get("salary_max")
+    if not lo and not hi:
+        return ""
+    fmt = lambda v: f"${v:,.0f}" if v else ""
+    rng = fmt(lo) + (f"–{fmt(hi)}" if hi and hi != lo else "")
+    return rng + (" (est.)" if j.get("salary_estimated") else "")
+
+
+def _render_one_job(j: dict) -> None:
+    st.markdown(f"**{j['title']}** — {j['company']}")
+    bits = [b for b in [
+        j.get("location"),
+        (j.get("contract_time") or "").replace("_", " "),
+        _salary(j),
+        (j.get("posted") or "")[:10],
+    ] if b]
+    if bits:
+        st.caption(" · ".join(bits))
+    if j.get("fair_chance"):
+        st.caption(f"🏅 Fair-chance employer — {j.get('fair_chance_evidence', '')}")
+    if j.get("url"):
+        st.markdown(f"[Apply]({j['url']})")
+
+
+def _render_live_jobs(job: dict) -> None:
+    soc, title = job["soc"], job.get("title", "")
+    merged, seen = [], set()
+    for j in fair_chance.fair_chance_jobs(soc, title=title) + jobs_src.search_jobs(soc, title=title):
+        key = (j["title"].lower().strip(), j["company"].lower().strip())
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(j)
+
+    label = f"Jobs hiring near you ({len(merged)})" if merged else "Jobs hiring near you"
+    with st.expander(label):
+        if not merged:
+            st.caption(
+                "No live openings to show yet. Fair-chance employer listings load "
+                "automatically; add ADZUNA_APP_ID/ADZUNA_APP_KEY in secrets for broader results."
+            )
+            return
+        for j in merged:
+            _render_one_job(j)
+        if any(j.get("source") == "Adzuna" for j in merged):
+            st.caption("Some results provided by Adzuna.")

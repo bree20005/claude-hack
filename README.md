@@ -58,6 +58,21 @@ Search the code for `TODO(` to find the plug-in points.
    canned demo output. Uses a current model (`claude-opus-4-8`) with a try/except fallback
    so the demo never hard-fails.
 
+## Live data sources (optional keys)
+
+See `docs/data-sources.md` for the full map. All degrade gracefully with no keys.
+
+- **Wages** — `sources/wages.py` pulls live CA median wages from data.ca.gov (no key).
+- **Fair-chance jobs** — `sources/fair_chance.py` reads public ATS boards (Greenhouse/
+  Lever/SmartRecruiters) for curated employers in `data/fair_chance_employers.json` (no key).
+- **Adzuna job postings** — add to `.streamlit/secrets.toml`:
+  ```toml
+  ADZUNA_APP_ID = "..."
+  ADZUNA_APP_KEY = "..."
+  ```
+  Free self-serve keys at developer.adzuna.com. Without them, aggregated postings are just
+  omitted. Adzuna attribution is shown automatically when its results appear.
+
 ## Storage / persistence
 
 `InSessionStorage` keeps everything in `st.session_state` — **nothing is persisted to
