@@ -85,7 +85,7 @@ def logout() -> None:
     # Clear the My Path conversation so the next person starts fresh.
     for k in [k for k in st.session_state.keys() if str(k).startswith("mp_")]:
         st.session_state.pop(k, None)
-    for k in ("msg_threads", "msg_active", "res_why", "page"):
+    for k in ("msg_threads", "msg_active", "res_why", "page", "saved_paths", "_db_loaded"):
         st.session_state.pop(k, None)
     if was_google:
         st.logout()

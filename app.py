@@ -11,6 +11,7 @@ from __future__ import annotations
 import streamlit as st
 
 import auth
+import db
 import nav
 import ui
 from views import community, landing, messages, my_path, paths, resources
@@ -26,6 +27,49 @@ PAGES = {
 }
 
 
+# Session keys saved per signed-in user (db.user_state). Guests are never saved.
+# Only plain data keys: widget keys (buttons, pills, toggles) can't be restored safely.
+_PERSIST = {
+    "mp_persona", "mp_stage", "mp_msgs", "mp_covered", "mp_qr", "mp_ready", "mp_crisis", "mp_answers",
+    "mp_tags", "mp_reasons", "mp_summary", "mp_skills", "mp_explines", "mp_tags_hash", "mp_matches",
+    "mp_payfloor", "mp_matches_key", "mp_letter_soc", "mp_published", "mp_anon", "mp_pub_job",
+    "mp_pub_journey", "mp_pub_advice", "msg_threads", "msg_active", "page", "saved_paths", "res_why",
+}
+
+
+def _persisted(ss) -> dict:
+    out = {k: ss[k] for k in _PERSIST if k in ss}
+    out.update({k: v for k, v in ss.items() if str(k).startswith("mp_letterdata_") and not str(k).endswith("_box")})
+    if "saved_paths" in out:
+        out["saved_paths"] = sorted(out["saved_paths"])
+    return out
+
+
+def _restore(user: dict) -> None:
+    """Load a signed-in user's saved progress once per browser session."""
+    ss = st.session_state
+    if user.get("guest") or ss.get("_db_loaded") == user["email"]:
+        return
+    db.upsert_user(user)
+    state = db.load_state(user["email"])
+    for k, v in state.items():
+        ss[k] = set(v) if k == "saved_paths" else v
+    ss["_db_loaded"] = user["email"]
+    if state:
+        st.toast("Welcome back. We picked up where you left off.")
+
+
+def _save(user: dict) -> None:
+    if not user.get("guest") and st.session_state.get("_db_loaded") == user["email"]:
+        db.save_state(user["email"], _persisted(st.session_state))
+
+
+def _delete_my_data(user: dict) -> None:
+    db.delete_user_data(user["email"])
+    auth.logout()
+    nav.reset()
+
+
 def _start_over() -> None:
     my_path.reset_all()
     st.session_state.pop("mp_persona", None)
@@ -38,11 +82,17 @@ def _header(user: dict) -> None:
         st.html(ui.brand())
     with right:
         session = "Guest session" if user.get("guest") else (user.get("name") or "Signed in")
-        a, b, c = st.columns([4, 1.3, 1], vertical_alignment="center")
+        a, b, c, d = st.columns([4, 1.3, 1.6, 1], vertical_alignment="center")
         a.html('<div class="rb-promise"><p>Your experience counts.</p>'
                f'<span class="rb-session">{ui.esc(session)}</span></div>')
         b.button("Start over", type="tertiary", key="hdr_restart", on_click=_start_over)
-        if c.button("Exit" if user.get("guest") else "Sign out", type="tertiary", key="signout"):
+        if not user.get("guest"):
+            with c.popover("My data"):
+                st.write("Your story, answers and conversations are saved to your account so you can come back. "
+                         "Delete everything, including any published story?")
+                if st.button("Delete my data", key="hdr_delete", on_click=_delete_my_data, args=(user,)):
+                    st.rerun()
+        if d.button("Exit" if user.get("guest") else "Sign out", type="tertiary", key="signout"):
             auth.logout()
             nav.reset()
             st.rerun()
@@ -99,11 +149,16 @@ def main() -> None:
     if user is None:
         landing.render()
         return
-    if "mp_persona" not in st.session_state:
-        _persona_choice(user)
-        return
-    _header(user)
-    PAGES.get(nav.current_page(), my_path.render)(user)
+    _restore(user)
+    try:
+        if "mp_persona" not in st.session_state:
+            _persona_choice(user)
+            return
+        _header(user)
+        PAGES.get(nav.current_page(), my_path.render)(user)
+    finally:  # runs on st.rerun() too, so every change is saved
+        if auth.current_user() is not None:
+            _save(auth.current_user())
 
 
 if __name__ == "__main__":
