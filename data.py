@@ -56,13 +56,32 @@ def training_for_family(family_code: str) -> list[dict]:
     return [t for t in load_training() if t["family_code"] == family_code]
 
 
+def with_live_wage(job: dict) -> dict:
+    """Return a copy of `job` with its CA median hourly wage refreshed from the live
+    data.ca.gov OEWS feed when available. Falls back to the seed value offline.
+    Adds `wage_source` ('live'|'seed') and, when live, `wage_year`."""
+    from sources import wages
+
+    live = wages.median_hourly(job["soc"])
+    out = dict(job)
+    if live:
+        out["ca_median_hourly"] = live["median_hourly"]
+        out["wage_year"] = live["year"]
+        out["wage_source"] = "live"
+    else:
+        out["wage_source"] = "seed"
+    return out
+
+
 def join_match(soc: str) -> dict | None:
     """Expand a matched SOC code into its full job record plus the stories and
     training programs that share its job family. Returns None for unknown SOC codes
-    (so the UI can safely skip anything Claude invented)."""
+    (so the UI can safely skip anything Claude invented). The job's wage is refreshed
+    from the live OEWS feed when available."""
     job = job_by_soc(soc)
     if job is None:
         return None
+    job = with_live_wage(job)
     fam = job["family_code"]
     return {
         "job": job,
@@ -77,3 +96,19 @@ def family_options() -> list[tuple[str, str]]:
     for j in load_jobs():
         seen.setdefault(j["family_code"], j["family"])
     return sorted(seen.items())
+
+
+def _family_sort_key(item: tuple[str, str]) -> tuple[int, str]:
+    # Put cross-sector / education pseudo-families last; SOC codes sort numerically.
+    code = item[0]
+    return (1, item[1]) if code in {"00", "ED"} else (0, code)
+
+
+def training_family_options() -> list[tuple[str, str]]:
+    """Unique (family_code, family) pairs present across training programs, so the
+    Train Up filter shows every family that actually has programs (not just the ones
+    in jobs.json). Cross-sector (00) and education (ED) are listed last."""
+    seen: dict[str, str] = {}
+    for t in load_training():
+        seen.setdefault(t["family_code"], t["family"])
+    return sorted(seen.items(), key=_family_sort_key)

@@ -82,9 +82,12 @@ def _render_job_card(email: str, store, match: dict, profile: dict) -> None:
         return
     job = joined["job"]
     with st.container(border=True):
-        title = f"{job['title']} — ${job['ca_median_hourly']:.2f}/hr (CA median)"
-        st.markdown(f"### {title}")
-        st.caption(f"{job['family']} · Training: {job['training']}")
+        st.markdown(f"### {job['title']} — ${job['ca_median_hourly']:.2f}/hr")
+        if job.get("wage_source") == "live":
+            wage_note = f"CA median wage · live data.ca.gov ({job.get('wage_year')})"
+        else:
+            wage_note = "CA median wage · seed estimate"
+        st.caption(f"{job['family']} · Training: {job['training']} · {wage_note}")
         st.write(match.get("why_it_fits", ""))
         if match.get("first_step"):
             st.markdown(f"**First step:** {match['first_step']}")
@@ -105,6 +108,8 @@ def _render_job_card(email: str, store, match: dict, profile: dict) -> None:
                     st.caption(
                         f"{t['length']} · {t['cost']} · {t['location']} — [link]({t['url']})"
                     )
+                    if t.get("licensing_warning"):
+                        st.warning(f"⚠️ {t['licensing_warning']}")
 
         if st.button("Write my cover letter", key=f"letter_{job['soc']}"):
             answers = st.session_state.get("my_path_answers", {})
