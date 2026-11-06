@@ -1,0 +1,30 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="113" height="28" viewBox="0 0 113 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Opening petals">
+<g id="Opening petal">
+<use xlink:href="#stroke0_0_28" fill="#FFD9CC"/>
+<mask id="stroke1_0_28" fill="white">
+<use xlink:href="#stroke0_0_28"/>
+</mask>
+<path d="M13.5 28C-2.49943 19.836 -1.49947 6.56948 2.50039 1.46697C6.50025 -2.61503 12.5 2.48747 13.5 8.61048C14.5 2.48747 20.4998 -2.61503 24.4996 1.46697C28.4995 6.56948 29.4994 19.836 13.5 28Z" stroke-width="3" stroke="#C2416B" mask="url(#stroke1_0_28)"/>
+</g>
+<g id="Opening petal_2">
+<use xlink:href="#stroke2_0_28" fill="#EDE3F5"/>
+<mask id="stroke3_0_28" fill="white">
+<use xlink:href="#stroke2_0_28"/>
+</mask>
+<path d="M48.5 28C32.5006 19.836 33.5005 6.56948 37.5004 1.46697C41.5002 -2.61503 47.5 2.48747 48.5 8.61048C49.5 2.48747 55.4998 -2.61503 59.4996 1.46697C63.4995 6.56948 64.4994 19.836 48.5 28Z" stroke-width="3" stroke="#C2416B" mask="url(#stroke3_0_28)"/>
+</g>
+<g id="Opening petal_3">
+<use xlink:href="#stroke4_0_28" fill="#FFD9CC"/>
+<mask id="stroke5_0_28" fill="white">
+<use xlink:href="#stroke4_0_28"/>
+</mask>
+<path d="M83.5 28C67.5006 19.836 68.5005 6.56948 72.5004 1.46697C76.5002 -2.61503 82.5 2.48747 83.5 8.61048C84.5 2.48747 90.4998 -2.61503 94.4996 1.46697C98.4995 6.56948 99.4994 19.836 83.5 28Z" stroke-width="3" stroke="#C2416B" mask="url(#stroke5_0_28)"/>
+</g>
+</g>
+<defs>
+<path id="stroke0_0_28" d="M13.5 28C-2.49943 19.836 -1.49947 6.56948 2.50039 1.46697C6.50025 -2.61503 12.5 2.48747 13.5 8.61048C14.5 2.48747 20.4998 -2.61503 24.4996 1.46697C28.4995 6.56948 29.4994 19.836 13.5 28Z"/>
+<path id="stroke2_0_28" d="M48.5 28C32.5006 19.836 33.5005 6.56948 37.5004 1.46697C41.5002 -2.61503 47.5 2.48747 48.5 8.61048C49.5 2.48747 55.4998 -2.61503 59.4996 1.46697C63.4995 6.56948 64.4994 19.836 48.5 28Z"/>
+<path id="stroke4_0_28" d="M83.5 28C67.5006 19.836 68.5005 6.56948 72.5004 1.46697C76.5002 -2.61503 82.5 2.48747 83.5 8.61048C84.5 2.48747 90.4998 -2.61503 94.4996 1.46697C98.4995 6.56948 99.4994 19.836 83.5 28Z"/>
+</defs>
+</svg>

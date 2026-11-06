@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Shared topic petal">
+<path d="M12 28C-4.83047 21 -3.14742 10 12 0C27.1474 10 28.8305 21 12 28Z" fill="#C2416B"/>
+<mask id="stroke0_0_4" fill="white">
+<path d="M12 28C-4.83047 21 -3.14742 10 12 0C27.1474 10 28.8305 21 12 28Z"/>
+</mask>
+<path d="M12 28C-4.83047 21 -3.14742 10 12 0C27.1474 10 28.8305 21 12 28Z" stroke-width="3" stroke="#C2416B" mask="url(#stroke0_0_4)"/>
+</g>
+</svg>

@@ -9,6 +9,7 @@ Owners:
   - data/jobs.json      -> Stream 2 (real O*NET occupation/Job Zone + BLS CA wages)
   - data/stories.json   -> Stream 3 (synthetic peer stories)
   - data/training.json  -> Stream 3 (real local SF/Bay Area programs)
+  - data/paths.json     -> synthetic example career paths (Paths tab)
 
 NOTE: the seed jobs.json wages are illustrative placeholders. Stream 2 should replace
 them with verified BLS OEWS California medians and confirm each license flag.
@@ -42,6 +43,21 @@ def load_stories() -> list[dict]:
 @st.cache_data
 def load_training() -> list[dict]:
     return _load("training.json")
+
+
+@st.cache_data
+def load_paths() -> list[dict]:
+    """Synthetic example career paths for the Paths tab (wages are illustrative)."""
+    return _load("paths.json")
+
+
+def family_name(family_code: str) -> str:
+    """Full family name for a code, from jobs.json (falls back to the code)."""
+    return next((j["family"] for j in load_jobs() if j["family_code"] == family_code), family_code)
+
+
+def jobs_for_family(family_code: str) -> list[dict]:
+    return [j for j in load_jobs() if j["family_code"] == family_code]
 
 
 def job_by_soc(soc: str) -> dict | None:

@@ -1,9 +1,10 @@
 """Authentication for Next Chapter.
 
-Two ways in (both requested):
-  1. Email + password  -> fully working here (passwords hashed with PBKDF2).
-  2. Google sign-in     -> STUBBED button for now. See `login_google()` for how to
-     wire Streamlit's native OIDC (`st.login`) later.
+Ways in:
+  1. Rebloom dialog: phone code / email link -> `login_passwordless()` (DEMO STUB:
+     nothing is sent; see the docstring), plus guest mode -> `login_guest()`.
+  2. Email + password  -> working helpers (PBKDF2), not used by the Rebloom UI.
+  3. Google sign-in     -> STUB. See `login_google()` for wiring `st.login` later.
 
 The signed-in user lives in `st.session_state["user"]`. `email` is the key that ties
 a person to their stored activity (see storage.py).
@@ -61,6 +62,9 @@ def clear_new_user_flag() -> None:
 def logout() -> None:
     st.session_state.pop(_USER_KEY, None)
     st.session_state.pop(_NEW_USER_KEY, None)
+    # Clear the My Path conversation so the next person starts fresh.
+    for k in [k for k in st.session_state.keys() if str(k).startswith("mp_")]:
+        st.session_state.pop(k, None)
 
 
 def _set_session(user: dict, new: bool) -> None:
@@ -128,3 +132,39 @@ def login_google() -> tuple[bool, str]:
         )
     _set_session(store.get_user(demo_email), new=new)
     return True, "Signed in with Google (demo stub)."
+
+
+# --- Rebloom login dialog (Figma: "B · Log in over homepage") ----------------
+def login_passwordless(identifier: str, kind: str, program_code: str = "") -> tuple[bool, str]:
+    """DEMO STUB for "Text me a code" / "Send me a link".
+
+    No SMS or email is actually sent: the person is signed in directly. Real
+    delivery needs a provider (e.g. Twilio Verify / an email magic-link service)
+    and a verification step before `_set_session`.
+    """
+    raw = (identifier or "").strip()
+    if kind == "email":
+        key = raw.lower()
+        if not key or "@" not in key:
+            return False, "Please enter a valid email address."
+        name = key.split("@")[0].split(".")[0].capitalize()
+    else:
+        digits = "".join(ch for ch in raw if ch.isdigit())
+        if len(digits) < 10:
+            return False, "Please enter a 10-digit phone number."
+        key = f"phone:{digits[-10:]}"
+        name = "Friend"
+    store = get_storage()
+    existing = store.get_user(key)
+    if existing is None:
+        store.create_user(
+            {"email": key, "name": name, "provider": kind, "program_code": program_code.strip()}
+        )
+    _set_session(store.get_user(key), new=existing is None)
+    return True, "Signed in."
+
+
+def login_guest() -> None:
+    """Guest mode: nothing is tied to an account and nothing is kept after the session."""
+    st.session_state[_USER_KEY] = {"email": "guest", "name": "Guest", "guest": True}
+    st.session_state[_NEW_USER_KEY] = True

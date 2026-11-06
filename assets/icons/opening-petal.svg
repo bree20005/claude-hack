@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Opening petal">
+<use xlink:href="#stroke0_0_4" fill="#EDE3F5"/>
+<mask id="stroke1_0_4" fill="white">
+<use xlink:href="#stroke0_0_4"/>
+</mask>
+<path d="M13.5 28C-2.49943 19.836 -1.49947 6.56948 2.50039 1.46697C6.50025 -2.61503 12.5 2.48747 13.5 8.61048C14.5 2.48747 20.4998 -2.61503 24.4996 1.46697C28.4995 6.56948 29.4994 19.836 13.5 28Z" stroke-width="3" stroke="#C2416B" mask="url(#stroke1_0_4)"/>
+</g>
+<defs>
+<path id="stroke0_0_4" d="M13.5 28C-2.49943 19.836 -1.49947 6.56948 2.50039 1.46697C6.50025 -2.61503 12.5 2.48747 13.5 8.61048C14.5 2.48747 20.4998 -2.61503 24.4996 1.46697C28.4995 6.56948 29.4994 19.836 13.5 28Z"/>
+</defs>
+</svg>

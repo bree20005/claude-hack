@@ -1,0 +1,27 @@
+{
+  "industry": [
+    {"id": "food-service", "label": "Food Service", "soc_families": ["35"]},
+    {"id": "healthcare-support", "label": "Healthcare Support", "soc_families": ["31"]},
+    {"id": "caregiving-childcare", "label": "Caregiving & Childcare", "soc_families": ["31", "39"]},
+    {"id": "cleaning-facilities", "label": "Cleaning & Facilities", "soc_families": ["37"]},
+    {"id": "beauty-personal-care", "label": "Beauty & Personal Care", "soc_families": ["39"]},
+    {"id": "retail-customer-service", "label": "Retail & Customer Service", "soc_families": ["41", "43"]},
+    {"id": "office-admin", "label": "Office & Admin", "soc_families": ["43"]},
+    {"id": "trades-construction", "label": "Trades & Construction", "soc_families": ["47", "49"]},
+    {"id": "warehouse-driving", "label": "Warehouse & Driving", "soc_families": ["53"]},
+    {"id": "firefighting-emergency", "label": "Firefighting & Emergency Response", "soc_families": ["33"]},
+    {"id": "peer-support-community", "label": "Peer Support & Community Work", "soc_families": ["21"]}
+  ],
+  "experience": [
+    {"id": "worked-inside", "label": "Worked while incarcerated", "description": "Any job inside (kitchen, laundry, maintenance, clerk...)"},
+    {"id": "fire-crew", "label": "Fire crew", "description": "Served on a conservation/fire crew"},
+    {"id": "certificate-inside", "label": "Earned a credential inside", "description": "GED, vocational cert, college credits"},
+    {"id": "mentored-others", "label": "Mentored or led others", "description": "Trained, tutored, led a crew, peer mentor"},
+    {"id": "caregiver-parent", "label": "Mom or caregiver", "description": "Raising kids or caring for family"},
+    {"id": "informal-work", "label": "Informal work experience", "description": "Cash jobs, cleaning houses, babysitting, selling"},
+    {"id": "no-formal-work-history", "label": "Starting fresh", "description": "Little or no formal work history"},
+    {"id": "no-car", "label": "No car", "description": "Relies on transit or rides"},
+    {"id": "needs-daytime-hours", "label": "Needs daytime hours", "description": "Childcare, check-ins or other constraints"},
+    {"id": "in-recovery", "label": "In recovery", "description": "Only if she says it herself; sharers choose whether it's shown publicly"}
+  ]
+}

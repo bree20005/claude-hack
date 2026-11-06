@@ -1,0 +1,72 @@
+[
+  {
+    "id": "kitchen",
+    "start_label": "Kitchen",
+    "name": "Daniella M.",
+    "first_name": "Daniella",
+    "family_code": "35",
+    "family_short": "Food",
+    "headline": "From kitchen crew to kitchen supervisor",
+    "from": "Jail kitchen",
+    "to": "Kitchen supervisor",
+    "summary": "Meal prep, safe food handling, teamwork. She built on skills she already used inside.",
+    "steps": [
+      {"title": "Jail kitchen crew", "duration": "3 yrs", "icon": "cooking-pot", "status": "start"},
+      {"title": "CA Food Handler Card", "duration": "1 day", "icon": "badge-check", "status": "next",
+       "action": "Build on the food-safety skills you have.", "cta": "Find a course near me."},
+      {"title": "Prep cook", "duration": "8 mo", "wage": 18, "short": "Prep", "icon": "utensils"},
+      {"title": "Line cook", "duration": "2 yrs", "wage": 22, "short": "Line", "icon": "chef-hat"},
+      {"title": "Culinary training", "duration": "12 wks", "icon": "graduation-cap"},
+      {"title": "Kitchen supervisor", "duration": "now", "wage": 27, "short": "Sup.", "icon": "clipboard-check", "status": "now"}
+    ],
+    "advice": "I wrote down what I actually did: prep meals, keep food safe, help the crew. That gave me words for my first interview. Start with what you know, then ask what you need next.",
+    "licensing_note": "",
+    "synthetic": true
+  },
+  {
+    "id": "cleaning",
+    "start_label": "Cleaning crew",
+    "name": "Tasha",
+    "first_name": "Tasha",
+    "family_code": "31",
+    "family_short": "Healthcare Support",
+    "headline": "From cleaning crew to nursing assistant",
+    "from": "Cleaning crew",
+    "to": "CNA",
+    "summary": "Careful routines and looking out for others were skills she could name.",
+    "steps": [
+      {"title": "Facility cleaning crew", "duration": "1 yr", "icon": "sprout", "status": "start"},
+      {"title": "Check CNA licensing rules", "duration": "1 call", "icon": "badge-check", "status": "next",
+       "action": "Ask the CA board how a record affects certification before you pay for training.", "cta": "Find CNA training."},
+      {"title": "Janitor", "duration": "1 yr", "wage": 18, "short": "Janitor", "icon": "clipboard-check"},
+      {"title": "CNA training", "duration": "12 wks", "icon": "graduation-cap"},
+      {"title": "Nursing assistant", "duration": "now", "wage": 22, "short": "CNA", "icon": "heart-handshake", "status": "now"}
+    ],
+    "advice": "I called the licensing board before I signed up for anything. Knowing my options first meant I didn't waste money.",
+    "licensing_note": "A record may affect licensing. Check with the CA board before paying for training.",
+    "synthetic": true
+  },
+  {
+    "id": "laundry",
+    "start_label": "Laundry",
+    "name": "Renee",
+    "first_name": "Renee",
+    "family_code": "53",
+    "family_short": "Warehouse",
+    "headline": "From laundry crew to forklift lead",
+    "from": "Laundry",
+    "to": "Forklift lead",
+    "summary": "Sorting, tracking supplies, and keeping a busy team organized counted as experience.",
+    "steps": [
+      {"title": "Jail laundry crew", "duration": "2 yrs", "icon": "sprout", "status": "start"},
+      {"title": "Forklift certification", "duration": "1-2 days", "icon": "badge-check", "status": "next",
+       "action": "Build on the sorting and safety habits you already have.", "cta": "Find a course near me."},
+      {"title": "Warehouse associate", "duration": "1 yr", "wage": 19, "short": "Assoc.", "icon": "clipboard-check"},
+      {"title": "Forklift operator", "duration": "2 yrs", "wage": 23, "short": "Forklift", "icon": "trending-up"},
+      {"title": "Forklift lead", "duration": "now", "wage": 26, "short": "Lead", "icon": "heart-handshake", "status": "now"}
+    ],
+    "advice": "I checked the bus route before every application. A job I could actually get to mattered more than the highest wage.",
+    "licensing_note": "",
+    "synthetic": true
+  }
+]

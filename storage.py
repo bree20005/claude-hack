@@ -51,10 +51,10 @@ class Storage(ABC):
     def get_matches(self, email: str) -> list[dict]: ...
 
     @abstractmethod
-    def save_letter(self, email: str, job_soc: str, letter: str) -> None: ...
+    def save_letter(self, email: str, job_soc: str, letter: dict) -> None: ...
 
     @abstractmethod
-    def get_letters(self, email: str) -> dict[str, str]: ...
+    def get_letters(self, email: str) -> dict[str, dict]: ...
 
     @abstractmethod
     def get_history(self, email: str) -> dict[str, Any]:
@@ -110,10 +110,10 @@ class InSessionStorage(Storage):
     def get_matches(self, email: str) -> list[dict]:
         return self._bucket(email)["matches"]
 
-    def save_letter(self, email: str, job_soc: str, letter: str) -> None:
+    def save_letter(self, email: str, job_soc: str, letter: dict) -> None:
         self._bucket(email)["letters"][job_soc] = letter
 
-    def get_letters(self, email: str) -> dict[str, str]:
+    def get_letters(self, email: str) -> dict[str, dict]:
         return self._bucket(email)["letters"]
 
     def get_history(self, email: str) -> dict[str, Any]:

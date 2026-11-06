@@ -1,11 +1,13 @@
-# Streamlit app config. Theme is a neutral placeholder — restyle to match the
-# Figma wireframes once screenshots are available.
+# Streamlit app config. Colors/fonts match the Rebloom Figma file; the rest of the
+# look lives in ui.py (injected CSS).
 [theme]
-primaryColor = "#5B4B8A"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F3F1F8"
-textColor = "#1E1B2E"
-font = "sans serif"
+primaryColor = "#C2416B"
+backgroundColor = "#FFF5F3"
+secondaryBackgroundColor = "#EDE3F5"
+textColor = "#3D2A3A"
+font = "Nunito:https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
+headingFont = "Fraunces:https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+baseRadius = "full"
 
 [server]
 headless = true
