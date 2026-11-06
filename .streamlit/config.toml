@@ -1,0 +1,11 @@
+# Streamlit app config. Theme is a neutral placeholder — restyle to match the
+# Figma wireframes once screenshots are available.
+[theme]
+primaryColor = "#5B4B8A"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F3F1F8"
+textColor = "#1E1B2E"
+font = "sans serif"
+
+[server]
+headless = true

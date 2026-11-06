@@ -1,0 +1,35 @@
+[
+  {
+    "id": "t1",
+    "name": "Food Service / Bakery Training",
+    "provider": "The Bread Project",
+    "family_code": "35",
+    "length": "9-12 weeks",
+    "cost": "Free",
+    "location": "Berkeley / Oakland, CA",
+    "url": "https://breadproject.org/",
+    "notes": "Serves people facing barriers to work, including those with records."
+  },
+  {
+    "id": "t2",
+    "name": "Healthcare Academy (CNA pathway)",
+    "provider": "SF Healthcare Academy",
+    "family_code": "31",
+    "length": "Varies",
+    "cost": "No cost",
+    "location": "San Francisco, CA",
+    "url": "https://www.sf.gov/find-job-training-and-support-industry",
+    "notes": "No-cost healthcare training with coaching and job placement."
+  },
+  {
+    "id": "t3",
+    "name": "Pathways to Employment",
+    "provider": "SF Goodwill",
+    "family_code": "37",
+    "length": "~1 week",
+    "cost": "Free",
+    "location": "San Francisco, CA",
+    "url": "https://sfgoodwill.org/programs/entry-level-job-training/",
+    "notes": "Trauma-informed workforce readiness for justice-impacted adults."
+  }
+]
